@@ -1,0 +1,29 @@
+{
+  "name": "bao-json",
+  "version": "1.0.0-beta",
+  "description": "Json 工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c rollup.config.js"
+  },
+  "keywords": [],
+  "author": "nisus.lj",
+  "license": "AGPL3",
+  "dependencies": {
+    "@types/jest": "^28.1.4",
+    "jest": "^28.1.2",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "rollup": "^2.75.7",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.3.0"
+  }
+}
