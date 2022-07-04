@@ -1,0 +1,11 @@
+
+# common
+node_modules/
+src/
+rollup.config.js
+webpack.config.js
+.gitignore
+.editorconfig
+.babelrc
+*.tgz
+.idea/
