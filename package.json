@@ -1,10 +1,13 @@
 {
   "name": "bao-json",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "Json 工具. 支持解析注释.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "test": "jest",
     "build": "rollup -c rollup.config.js"

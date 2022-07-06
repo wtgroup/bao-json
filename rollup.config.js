@@ -78,7 +78,7 @@ export default defineConfig({
       useTsconfigDeclarationDir: true,
     }),
     babel(),
-    // terser(),
+    terser(),
     // awesome(),
     // cleanup here
     cleanup(),
