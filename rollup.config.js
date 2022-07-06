@@ -9,7 +9,8 @@ import {defineConfig} from 'rollup';
 // 这里是babel的插件，用来处理es的转换，当然会用一个.babelrc配置文件，下面也会简单列出来
 import babel from 'rollup-plugin-babel';
 // rollup处理typescript的插件
-import typescript from '@rollup/plugin-typescript';
+// import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2'; // 处理typescript
 // resolve将我们编写的源码与依赖的第三方库进行在之前的文章里面也有提到但是这里使用的@rollup/plugin-node-resolve
 import resolve from '@rollup/plugin-node-resolve';
 // 解决rollup.js无法识别CommonJS模块，这里使用的是@rollup/plugin-commonjs并不是之前提到的rollup-plugin-commonjs
@@ -27,10 +28,24 @@ export default defineConfig({
   input: 'src/index.ts',
   output: [
     {
-      file: `dist/index.js`,
-      format: 'umd',
+      file: 'dist/index.esm.js', // package.json 中 "module": "dist/index.esm.js"
+      format: 'esm', // es module 形式的包， 用来import 导入， 可以tree shaking
+      sourcemap: false
+    }, {
+      file: 'dist/index.cjs.js', // package.json 中 "main": "dist/index.cjs.js",
+      format: 'cjs', // commonjs 形式的包， require 导入
+      sourcemap: false
+    }, {
+      file: 'dist/index.umd.js',
       name: 'BaoJson',
+      format: 'umd', // umd 兼容形式的包， 可以直接应用于网页 script
+      sourcemap: false
     },
+    // {
+    //   file: `dist/index.js`,
+    //   format: 'umd',
+    //   name: 'BaoJson',
+    // },
     // {
     //   file: `dist/${libName}.cjs.js`,
     //   // commonjs格式
@@ -59,6 +74,7 @@ export default defineConfig({
     babel(),
     typescript({
       sourceMap: false,
+      useTsconfigDeclarationDir: true,
     }),
     resolve(),
     terser(),

@@ -1558,18 +1558,25 @@ class CommentMeta {
   }
 }
 
-const JSON = {
+// const JSON = {
+//   parse: (json) => {
+//     return new JsonParser(json).parse();
+//   }
+// }
+
+export default {
   parse: (json) => {
     return new JsonParser(json).parse();
-  }
-}
-
-export default JSON;
-export {
+  },
   JsonParser,
   ItemType,
   ParseContext,
-};
+}
+// export {
+//   JsonParser,
+//   ItemType,
+//   ParseContext,
+// };
 
 // ---- 测试 ----
 
