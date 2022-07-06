@@ -18,8 +18,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
 import {terser} from 'rollup-plugin-terser';
 import cleanup from 'rollup-plugin-cleanup';
+import commonjs from "rollup-plugin-commonjs";
 
-// import commonjs from 'rollup-plugin-commonjs';
 
 // 拿到package.json的name属性来动态设置打包名称
 const libName = pkg.name;
@@ -71,13 +71,14 @@ export default defineConfig({
   // 解释同globals配置，这个配置的意思是我简单处理把外部依赖不打包进bundle中，而是前置引入或者作为依赖安装使用
   // external: ['@antv/g6'],
   plugins: [
-    babel(),
+    resolve(),
+    commonjs(),
     typescript({
       sourceMap: false,
       useTsconfigDeclarationDir: true,
     }),
-    resolve(),
-    terser(),
+    babel(),
+    // terser(),
     // awesome(),
     // cleanup here
     cleanup(),

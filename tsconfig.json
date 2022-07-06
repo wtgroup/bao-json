@@ -2,10 +2,12 @@
   "compilerOptions": {
     "declaration": true, // 生成*.d.ts
     "declarationDir": "./dist/types", /* '.d.ts' 文件输出目录 */
-    //"emitDeclarationOnly": true, /* 只生成声明文件，不生成 js 文件*/
+//    "emitDeclarationOnly": true, /* 只生成声明文件，不生成 js 文件*/
     "rootDir": "./src", /* 指定输出文件目录（用于输出），用于控制输出目录结构 */
-    "target": "esnext",
-    "module": "esnext",
+//    "target": "esnext",
+//    "module": "esnext",
+    "target": "ES5",  // 要改成es5，不然babel转换es6的时候有些转换不了
+    "module": "ESNext",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -16,10 +18,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "noImplicitAny": false,
-    "types": [
-      "webpack-env",
-      "jest"
-    ],
     "paths": {
       "@/*": [
         "src/*"

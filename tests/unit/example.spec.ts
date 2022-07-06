@@ -1,4 +1,5 @@
 import {parse, ParseContext} from "../../src";
+import BaoJson from '../../src'
 
 describe('JSON', () => {
 
@@ -30,5 +31,10 @@ describe('JSON', () => {
     console.log(parseContext);
 
     expect(true).toBe(true)
+  })
+
+  it('default-import', () => {
+    const res = BaoJson.parse("{}");
+    console.log(res);
   })
 })
