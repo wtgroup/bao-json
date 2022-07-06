@@ -1,4 +1,4 @@
-import JSON from "../../src";
+import {parse, ParseContext} from "../../src";
 
 describe('JSON', () => {
 
@@ -26,7 +26,7 @@ describe('JSON', () => {
   // 生日 @mock \\@datetime("yyyy-MM-dd HH:mm:ss")
   "birthday": "2022-3-27 23:39:45"
 }`;
-    const parseContext = JSON.parse(json);
+    const parseContext: ParseContext = parse(json);
     console.log(parseContext);
 
     expect(true).toBe(true)

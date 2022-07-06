@@ -1558,25 +1558,26 @@ class CommentMeta {
   }
 }
 
-// const JSON = {
-//   parse: (json) => {
-//     return new JsonParser(json).parse();
-//   }
-// }
+/**
+ * 快捷方法
+ */
+const parse = (json) => {
+  return new JsonParser(json).parse();
+}
 
-export default {
-  parse: (json) => {
-    return new JsonParser(json).parse();
-  },
+
+/**
+ * 为了兼顾 import 和 require 方式都使用自然
+ * export default , 还有其他 export, require 变量.default 才是 default 导出的.
+ */
+export {
+  parse,
   JsonParser,
   ItemType,
   ParseContext,
 }
-// export {
-//   JsonParser,
-//   ItemType,
-//   ParseContext,
-// };
+
+
 
 // ---- 测试 ----
 
