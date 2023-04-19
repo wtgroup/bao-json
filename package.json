@@ -18,6 +18,10 @@
     "name": "nisus.lj",
     "email": "609069481@qq.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wtgroup/bao-json"
+  },
   "dependencies": {
   },
   "devDependencies": {
